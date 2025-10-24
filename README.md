@@ -291,7 +291,23 @@ similaires, notamment au niveau du F1-score et du ROC-AUC.
 
 ● ROC-AUC : mesure de la capacité du modèle à distinguer les classes
 
+### Visualisation via PCA 2D
 
+```python
+# PCA 2D (visualisation légère)
+# ------------------------------
+pca = PCA(n_components=2, random_state=42)
+X_pca = pca.fit_transform(X_scaled)
+plt.scatter(X_pca[:,0], X_pca[:,1], c=labels_km, cmap='viridis', alpha=0.6, s=20)
+plt.title("Clusters KMeans (PCA 2D)")
+plt.show(block=False)
+plt.pause(0.5)
+plt.close()
+
+```
+<img src="Images/13.png" width="600" style="display: block; margin: 0 auto;">
+<p style='text-align: center; font-style: italic; color: #7f8c8d;'>
+</p>
 
 
 ## Conclusion
