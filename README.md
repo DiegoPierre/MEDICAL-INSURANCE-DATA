@@ -313,6 +313,7 @@ Les individus sont affichés en couleur selon leur cluster KMeans.
 
 ### Interprétation :
 ● Permet de visualiser les clusters et leur séparation globale.
+
 ● Utile pour présenter les résultats aux parties prenantes.
 
 ## Conclusion
