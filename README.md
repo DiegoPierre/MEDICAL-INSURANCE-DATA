@@ -261,4 +261,5 @@ ses caractéristiques (âge, revenu, statut de fumeur, etc.).
 Cette étape permet de comparer plusieurs modèles d’apprentissage automatique et de sélectionner celui qui donne les
 meilleures performances prédictives.
 
+<img width="805" height="333" alt="image" src="https://github.com/user-attachments/assets/66fc8775-1d91-4277-b34a-2d0c7a29cfc0" />
 
