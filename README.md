@@ -64,7 +64,7 @@ plt.show()
 
 ```
 
-<img src="Images/1.png" width="300" style="display: block; margin: 0 auto;">
+<img src="Images/1.png" width="800" style="display: block; margin: 0 auto;">
 <p style='text-align: center; font-style: italic; color: #7f8c8d;'>
 </p>
 
