@@ -12,3 +12,34 @@ couverture d’assurance, etc.
 facteurs qui influencent le coût des soins médicaux et d’anticiper les dépenses futures.
 Dans ce contexte, l’utilisation de méthodes d’analyse de données et de modélisation statistique devient un atout essentiel pour mieux
 comprendre le comportement médical des assurés, évaluer les risques et optimiser la tarification des assurances santé.
+
+### Problématique
+Les coûts médicaux varient fortement d’un individu à un autre. Cette variation dépend de nombreux éléments : âge, sexe,revenu,
+region, état de santé, couverture d’assurance, etc.
+ La question centrale du projet est donc :
+Comment prédire les dépenses médicales annuelles d’un individu à partir de ses caractéristiques personnelles,
+économiques et médicales ?
+
+### Objectifs du projet
+- Développer un modèle capable d’estimer les dépenses annuelles par patient.
+Identifier les variables les plus influentes sur les coûts, telles que l’âge, l’IMC, le statut de fumeur ou le nombre de visites médicales.
+-Regrouper les patients selon des caractéristiques médicales et démographiques similaires.
+Identifier les groupes à haut risque pour cibler la prévention et l’allocation des ressources.
+-Comparer plusieurs modèles de machine learning (régression linéaire, Random Forest, XGBoost, Logistic Regression) pour sélectionner celui
+offrant la meilleure performance.
+Utiliser des métriques complètes : précision (accuracy), rappel (recall), score F1, matrice de confusion, AUC, R² et RMSE
+-Représenter la structure des clusters via PCA 2D/3D, UMAP.
+Créer des boxplots, heatmaps et graphiques interactifs pour comprendre la distribution des coûts et des caractéristiques par cluster.
+-Prévoir les coûts pour les assureurs et hôpitaux.
+Segmentation pour la prévention ciblée et la planification des traitements.
+Allocation optimale des ressources médicales selon le risque.
+Surveillance de la santé des populations à haut risque et contribution indirecte à la lutte contre les maladies chroniques ou infectieuses, comme le
+VIH.
+
+### Exploration et compréhension du jeu de données
+Cette première phase d’exploration permet donc de :
+● Comprendre la structure et la composition du jeu de données.
+● Identifier les principales caractéristiques statistiques des variables.
+● Détecter les problèmes de qualité des données, comme les valeurs manquantes ou les anomalies.
+Ces vérifications sont essentielles pour garantir la fiabilité des résultats et assurer la réussite des étapes suivantes d’analyse et
+de modélisation.
