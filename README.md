@@ -275,8 +275,27 @@ Après optimisation, chaque modèle est évalué sur le jeu de test avec plusieu
 
 ● F1 Score : équilibre entre précision et rappel.
 
+## Résultats
+Après évaluation, les trois modèles (Régression Logistique, Random Forest et XGBoost) présentent des scores de performance très
+similaires, notamment au niveau du F1-score et du ROC-AUC.
+ Cela suggère que le jeu de données contient des relations relativement simples entre les variables explicatives et la variable cible.
+ Dans ce cas, un modèle plus simple comme la Régression Logistique pourrait être privilégié, car il est :
+● plus rapide à entraîner,
+● plus interprétable,
+● et plus facile à déployer dans un contexte réel, par exemple au sein d’un système de santé en Haïti.
+
 ● Precision : fiabilité des prédictions positives.
 
 ● Recall : capacité à détecter correctement les cas à risque.
 
 ● ROC-AUC : mesure de la capacité du modèle à distinguer les classes
+
+
+
+
+## Conclusion
+Ce projet démontre que l’exploitation intelligente des données médicales et socio économiques peut devenir un
+levier stratégique pour les organismes d’assurance et les acteurs du système de santé.
+Les approches de modélisation (régression, classification et clustering) permettent de passer d’une gestion réactive
+des dépenses à une gestion prédictive et préventive, offrant ainsi une meilleure maîtrise des coûts et une
+amélioration du bien-être des assurés.
