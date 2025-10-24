@@ -180,6 +180,61 @@ La matrice de corrélation obtenue permet d’identifier :
 ● Les variables indépendantes, qui présentent peu ou pas de relation.
 
 
+### Analyse et traitement des valeurs extrêmes (Outliers)
+L’objectif de cette étape est d’identifier et corriger les valeurs anormales présentes dans le jeu de données. Ces valeurs,
+appelées outliers, sont des observations qui s’éloignent fortement de la majorité des autres. Dans le contexte des coûts
+médicaux, elles peuvent correspondre à des individus ayant des dépenses exceptionnellement élevées ou faibles.
+### Analyse exploratoire approfondie
+Après le nettoyage et la préparation des données, une analyse exploratoire approfondie a été réalisée afin de mieux
+comprendre les relations entre les principales variables du jeu de données.
+ Cette étape vise à visualiser les tendances, les corrélations et les interactions entre les facteurs démographiques, le mode
+de vie et les dépenses médicales annuelles.
+ ## Relation entre âge, coût médical, tabagisme et indice de masse corporelle (BMI)
 
+```python
+# ------------------------------
+# Pairplot pour visualisation multi-variables
+# ------------------------------
+cols_to_plot = ['age', 'bmi', 'income', 'visits_last_year', 'annual_medical_cost']
+sns.pairplot(df[cols_to_plot + ['smoker']], hue='smoker', diag_kind='kde', palette='Set2')
+plt.show()
 
+```
 
+<img src="Images/4.png" width="600" style="display: block; margin: 0 auto;">
+<p style='text-align: center; font-style: italic; color: #7f8c8d;'>
+</p>
+
+La première visualisation est un nuage de points interactif où :
+● l’axe des x représente l’âge des individus,
+
+● l’axe des y indique le coût médical annuel,
+
+● la couleur distingue les fumeurs et non-fumeurs,
+
+● la taille des points correspond à l’indice de masse corporelle (BMI).
+## Interprétation :
+● On observe que les fumeurs ont en moyenne des coûts médicaux plus élevés, surtout à partir d’un certain âge.
+
+● Les individus avec un BMI élevé (surpoids) ont également tendance à avoir des dépenses supérieures.
+
+● Cela montre une interaction importante entre le tabagisme, l’âge et l’obésité dans la variation des coûts médicaux.
+
+## Comparaison des coûts médicaux selon le statut de fumeur et le sexe
+### Interprétation :
+● Les fumeurs, quel que soit le sexe, présentent une médiane de coût significativement plus élevée.
+
+● On note également une variabilité plus importante chez les fumeurs, ce qui peut indiquer des risques de santé plus
+diversifiés.
+
+● Chez les non-fumeurs, la distribution est plus stable et les coûts restent généralement modérés.
+
+## Carte de corrélation interactive
+### Interprétation :
+● Le coût médical annuel est fortement corrélé avec le statut de fumeur, le BMI et parfois le revenu.
+
+● L’âge joue également un rôle non négligeable, mais moins déterminant que le tabagisme.
+
+● Ces corrélations confirment les résultats visuels précédents et orientent les variables à privilégier pour la modélisation
+
+### relation entre le coût médical, l’âge, le tabagisme et les catégories de BMI
