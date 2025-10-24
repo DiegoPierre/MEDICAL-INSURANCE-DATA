@@ -262,19 +262,3 @@ Cette étape permet de comparer plusieurs modèles d’apprentissage automatique
 meilleures performances prédictives.
 
 
-## Trois algorithmes de classification ont été choisis pour la comparaison :
-Modèle Description Avantages
-Régression Logistique Modèle linéaire simple basé
-sur la probabilité
-Interprétable, rapide à
-entraîner
-Random Forest Ensemble d’arbres de
-décision entraînés
-aléatoirement
-Robuste, capture bien les
-relations non linéaires
-XGBoost Algorithme de gradient
-boosting très performant
-Excellente précision,
-efficace sur grands volumes
-de données
