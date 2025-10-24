@@ -328,6 +328,24 @@ Les individus sont affichés en couleur selon leur cluster KMeans.
 
 ● Utile pour présenter les résultats aux parties prenantes.
 
+### Analyse des moyennes par cluster
+
+Calcul des moyennes des variables clés (age, bmi, income, annual_medical_cost) pour chaque cluster.
+Visualisation via heatmap.
+Permet d’identifier les profils types : par exemple, un cluster peut représenter des individus jeunes à faible coût, un autre des
+personnes âgées avec coûts élevés.
+
+### Solutions et Recommandations
+À la suite des différentes analyses exploratoires et des modèles de machine learning (régression, classification et clustering),
+plusieurs solutions concrètes et applicables peuvent être proposées aux acteurs du secteur de la santé et de l’assurance.
+### Solutions pour les parties prenantes:
+Assureurs : prédire clients à risque élevé → ajustement primes.
+Hôpitaux et centres de santé : cibler programmes de prévention pour clusters à risque.
+Institutions publiques : allocation efficace du budget santé.
+Détection d’anomalies : identifier individus à profil atypique → prévention ciblée.
+Ces solutions visent à optimiser les coûts médicaux, améliorer la gestion du risque et favoriser une meilleure prise de
+décision stratégique.
+
 ## Conclusion
 Ce projet démontre que l’exploitation intelligente des données médicales et socio économiques peut devenir un
 levier stratégique pour les organismes d’assurance et les acteurs du système de santé.
