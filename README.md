@@ -308,7 +308,11 @@ plt.close()
 <img src="Images/13.png" width="600" style="display: block; margin: 0 auto;">
 <p style='text-align: center; font-style: italic; color: #7f8c8d;'>
 </p>
-
+Principe : réduction des dimensions avec PCA pour représenter les données en 2D.
+Les individus sont affichés en couleur selon leur cluster KMeans.
+### Interprétation :
+● Permet de visualiser les clusters et leur séparation globale.
+● Utile pour présenter les résultats aux parties prenantes.
 
 ## Conclusion
 Ce projet démontre que l’exploitation intelligente des données médicales et socio économiques peut devenir un
