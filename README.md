@@ -68,23 +68,35 @@ de modélisation.
 ## Compréhension analytique
 Le projet permet de réaliser plusieurs approches analytiques :
 ● Régression : prédire les dépenses médicales selon les caractéristiques des individus.
+
 ● Classification : attribuer un niveau de risque (faible, moyen, élevé).
+
 ● Clustering : regrouper les individus par similarité de profil santé.
+
 ● Analyse exploratoire : étudier les corrélations entre les variables et les coûts.
+
 ● Analyse de corrélation approfondie: Il serait intéressant d’étudier plus en détail les relations entre les différentes variables du jeu de données
+
 ● Analyse de la variance (ANOVA) : comparer les moyennes de dépenses médicales entre différents groupes d’individus : par exemple selon le type
 d’assurance, le sexe, la région, ou la présence de maladies chroniques.
+
 ● Importance des variables et analyse de sensibilité : évaluer le poids de chaque facteur dans la prédiction du coût médical.
 
 ## Intérêt pour le domaine de la santé
 Ce type d’analyse peut aider à :
+
 ● Identifier les comportements à risque pour la santé.
+
 ● Comprendre comment certains facteurs influencent les coûts médicaux.
+
 ● Développer des politiques d’assurance plus justes et adaptées.
+
 ● Promouvoir la prévention et la sensibilisation à la santé.
 ● Une carte de corrélation (ou heatmap) permettrait de visualiser ces liens et d’identifier les facteurs les plus liés aux
 dépenses de santé.
+
 ● Cela permettrait de déterminer si les différences observées entre les groupes sont statistiquement significatives.
+
 ● Une analyse de sensibilité permettra aussi d’évaluer comment de petites variations dans les données (comme une légère
 hausse de l’IMC) impactent le coût estimé.
 
