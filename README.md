@@ -82,6 +82,25 @@ dépenses de santé.
 ● Cela permettrait de déterminer si les différences observées entre les groupes sont statistiquement significatives.
 ● Une analyse de sensibilité permettra aussi d’évaluer comment de petites variations dans les données (comme une légère
 hausse de l’IMC) impactent le coût estimé.
+
+## Modélisation
+
+### Régression:
+Pour prédire les dépenses médicales annuelles.
+- Régression linéaire
+- Random Forest Regressor
+- XGBoost Regressor
+## Classification:
+Pour classer les individus selon leur niveau de risque (faible, moyen, élevé).
+-Logistic Regression
+-Decision Tree / Random Forest
+-Support Vector Machine (SVM)
+## Modélisation
+### Clustering:
+Pour regrouper les individus selon leurs profils de santé
+### K-Means
+### DBSCAN
+
 ### Analyse exploratoire des coûts médicaux
 ```python
 # Visualisations simples
@@ -104,7 +123,7 @@ Ce graphique montre la répartition des dépenses médicales annuelles dans l’
 Chaque barre représente le nombre de personnes dont les dépenses se situent dans une certaine plage de coûts.
 Interprétation:
 La plupart des individus dépensent relativement peu en soins médicaux chaque année, mais une minorité présente des coûts très élevés,
-souvent liés à des maladies chroniques ou à des hospitalisations importantes.
+souvent liés à des maladies chroniques ou à des hospitalisations importantes
 
 
 ### Coût moyen selon le statut de fumeur
@@ -121,36 +140,43 @@ plt.show()
 <p style='text-align: center; font-style: italic; color: #7f8c8d;'>
 </p>
 
-### Coût moyen selon le statut de fumeur
+###Coût moyen selon le statut de fumeur
 Ce graphique compare le coût médical moyen entre les fumeurs et les non-fumeurs.
 Chaque barre correspond à la dépense moyenne d’un groupe.
 Interprétation:
 On observe généralement que les fumeurs ont des coûts médicaux moyens plus élevés que les non-fumeurs.
 Cela peut s’expliquer par un risque accru de maladies respiratoires, cardiovasculaires ou cancéreuses, entraînant des soins plus coûteux
 
-### Compréhension analytique
-Le projet permet de réaliser plusieurs approches analytiques :
-● Régression : prédire les dépenses médicales selon les caractéristiques des individus.
-● Classification : attribuer un niveau de risque (faible, moyen, élevé).
-● Clustering : regrouper les individus par similarité de profil santé.
-● Analyse exploratoire : étudier les corrélations entre les variables et les coûts.
-● Analyse de corrélation approfondie: Il serait intéressant d’étudier plus en détail les relations entre les différentes
-variables du jeu de données
-● Analyse de la variance (ANOVA) : comparer les moyennes de dépenses médicales entre différents groupes d’individus : par
-exemple selon le type d’assurance, le sexe, la région, ou la présence de maladies chroniques.
-● Importance des variables et analyse de sensibilité : évaluer le poids de chaque facteur dans la prédiction du coût médical
+### Corrélation entre les variables numériques
+```python
+# ------------------------------
+# Corrélation avancée (variables numériques)
+# ------------------------------
+numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns
+corr_matrix = df[numeric_cols].corr()
 
-### Intérêt pour le domaine de la santé
-Ce type d’analyse peut aider à :
-● Identifier les comportements à risque pour la santé.
-● Comprendre comment certains facteurs influencent les coûts médicaux.
-● Développer des politiques d’assurance plus justes et adaptées.
-● Promouvoir la prévention et la sensibilisation à la santé.
-● Une carte de corrélation (ou heatmap) permettrait de visualiser ces liens et d’identifier les facteurs les plus liés aux dépenses de
-santé.
-● Cela permettrait de déterminer si les différences observées entre les groupes sont statistiquement significatives.
-● Une analyse de sensibilité permettra aussi d’évaluer comment de petites variations dans les données (comme une légère hausse de
-l’IMC) impactent le coût estimé.
+plt.figure(figsize=(12,8))
+sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap="coolwarm")
+plt.title("Matrice de corrélation des variables numériques")
+plt.show()
+
+```
+<img src="Images/3.png" width="600" style="display: block; margin: 0 auto;">
+<p style='text-align: center; font-style: italic; color: #7f8c8d;'>
+</p>
+
+## Interprétation
+L’objectif de cette étape est d’examiner les relations linéaires entre les différentes variables numériques du jeu de
+données.
+Cette analyse permet d’identifier les variables fortement corrélées entre elles, ce qui aide à comprendre les interactions
+potentielles et à éviter la redondance lors de la modélisation.
+Interprétation des résultats :
+La matrice de corrélation obtenue permet d’identifier :
+● Les variables fortement corrélées positivement, qui évoluent dans le même sens.
+● Les variables corrélées négativement, qui évoluent en sens inverse.
+● Les variables indépendantes, qui présentent peu ou pas de relation.
+
+
 
 
 
