@@ -269,3 +269,14 @@ meilleures performances prédictives.
 
 <img width="805" height="333" alt="image" src="https://github.com/user-attachments/assets/66fc8775-1d91-4277-b34a-2d0c7a29cfc0" />
 
+## Évaluation des performances
+Après optimisation, chaque modèle est évalué sur le jeu de test avec plusieurs indicateurs :
+● Accuracy : proportion de bonnes prédictions.
+
+● F1 Score : équilibre entre précision et rappel.
+
+● Precision : fiabilité des prédictions positives.
+
+● Recall : capacité à détecter correctement les cas à risque.
+
+● ROC-AUC : mesure de la capacité du modèle à distinguer les classes
