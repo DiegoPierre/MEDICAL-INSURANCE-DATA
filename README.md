@@ -52,6 +52,8 @@ médicales.
 Ce fichier contient :
 **Lignes : **100 000
 **Colonnes : **54+
+<img width="936" height="444" alt="image" src="https://github.com/user-attachments/assets/94c0f4a4-41d2-4533-afc5-aeeca65c0c03" />
+
 
 ## Exploration et compréhension du jeu de données
 Cette phase d’exploration permet donc de :
