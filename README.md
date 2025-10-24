@@ -310,6 +310,7 @@ plt.close()
 </p>
 Principe : réduction des dimensions avec PCA pour représenter les données en 2D.
 Les individus sont affichés en couleur selon leur cluster KMeans.
+
 ### Interprétation :
 ● Permet de visualiser les clusters et leur séparation globale.
 ● Utile pour présenter les résultats aux parties prenantes.
