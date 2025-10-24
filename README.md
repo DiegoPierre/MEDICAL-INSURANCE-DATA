@@ -140,7 +140,7 @@ plt.show()
 <p style='text-align: center; font-style: italic; color: #7f8c8d;'>
 </p>
 
-###Coût moyen selon le statut de fumeur
+### Coût moyen selon le statut de fumeur
 Ce graphique compare le coût médical moyen entre les fumeurs et les non-fumeurs.
 Chaque barre correspond à la dépense moyenne d’un groupe.
 Interprétation:
@@ -172,8 +172,11 @@ Cette analyse permet d’identifier les variables fortement corrélées entre el
 potentielles et à éviter la redondance lors de la modélisation.
 Interprétation des résultats :
 La matrice de corrélation obtenue permet d’identifier :
+
 ● Les variables fortement corrélées positivement, qui évoluent dans le même sens.
+
 ● Les variables corrélées négativement, qui évoluent en sens inverse.
+
 ● Les variables indépendantes, qui présentent peu ou pas de relation.
 
 
