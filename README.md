@@ -456,20 +456,20 @@ plt.legend()
 plt.show()
 
 ```
-<img src="Images/19.png" width="4000" style="display: block; margin: 0 auto;">
+<img src="Images/19.png" width="600" style="display: block; margin: 0 auto;">
 <p style='text-align: center; font-style: italic; color: #7f8c8d;'>
 </p>
 
 
-<img src="Images/20.png" width="4000" style="display: block; margin: 0 auto;">
+<img src="Images/20.png" width="600" style="display: block; margin: 0 auto;">
 <p style='text-align: center; font-style: italic; color: #7f8c8d;'>
 </p>
 
-<img src="Images/21.png" width="4000" style="display: block; margin: 0 auto;">
+<img src="Images/21.png" width="600" style="display: block; margin: 0 auto;">
 <p style='text-align: center; font-style: italic; color: #7f8c8d;'>
 </p>
 
-<img src="Images/22.png" width="4000" style="display: block; margin: 0 auto;">
+<img src="Images/22.png" width="600" style="display: block; margin: 0 auto;">
 <p style='text-align: center; font-style: italic; color: #7f8c8d;'>
 </p>
 
