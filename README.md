@@ -346,6 +346,133 @@ Détection d’anomalies : identifier individus à profil atypique → préventi
 Ces solutions visent à optimiser les coûts médicaux, améliorer la gestion du risque et favoriser une meilleure prise de
 décision stratégique.
 
+## Visualisation
+```python
+# Deep Learning / Autoencodeur
+
+
+# ===============================
+# Préparation des données
+# ===============================
+
+# On suppose que df_encoded contient les variables numériques et normalisées
+X = df_encoded.drop(columns=['annual_medical_cost'], errors='ignore')
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# Split train/test
+X_train, X_test = train_test_split(X_scaled, test_size=0.2, random_state=42)
+
+# ===============================
+# Construction de l’autoencodeur
+# ===============================
+
+input_dim = X_train.shape[1]
+encoding_dim = 8  # nombre de neurones dans la couche centrale (dimension réduite)
+
+# Architecture de l'autoencodeur
+input_layer = Input(shape=(input_dim,))
+encoder = Dense(32, activation='relu')(input_layer)
+encoder = Dense(16, activation='relu')(encoder)
+bottleneck = Dense(encoding_dim, activation='relu', name="bottleneck")(encoder)
+decoder = Dense(16, activation='relu')(bottleneck)
+decoder = Dense(32, activation='relu')(decoder)
+output_layer = Dense(input_dim, activation='linear')(decoder)
+
+autoencoder = Model(inputs=input_layer, outputs=output_layer)
+autoencoder.compile(optimizer=Adam(learning_rate=0.001), loss='mse')
+
+# ===============================
+# Entraînement du modèle
+# ===============================
+history = autoencoder.fit(
+    X_train, X_train,
+    epochs=50,
+    batch_size=64,
+    validation_data=(X_test, X_test),
+    verbose=1
+)
+
+# ===============================
+# Visualisation de la courbe d’entraînement
+# ===============================
+plt.figure(figsize=(8,5))
+plt.plot(history.history['loss'], label='Train Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.title("Courbe de perte - Autoencodeur")
+plt.xlabel("Épochs")
+plt.ylabel("MSE")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# ===============================
+# Réduction de dimension (via couche bottleneck)
+# ===============================
+encoder_model = Model(inputs=input_layer, outputs=bottleneck)
+X_encoded = encoder_model.predict(X_scaled)
+
+plt.figure(figsize=(8,6))
+sns.scatterplot(x=X_encoded[:,0], y=X_encoded[:,1], s=40, alpha=0.7)
+plt.title("Représentation réduite via Autoencodeur (2 premières dimensions)")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.show()
+
+# ===============================
+# Détection d’anomalies
+# ===============================
+
+# Reconstruction des données
+X_reconstructed = autoencoder.predict(X_scaled)
+
+# Calcul de l’erreur de reconstruction
+reconstruction_error = np.mean(np.square(X_scaled - X_reconstructed), axis=1)
+
+# Visualisation de la distribution des erreurs
+plt.figure(figsize=(8,5))
+sns.histplot(reconstruction_error, bins=50, kde=True)
+plt.title("Distribution des erreurs de reconstruction")
+plt.xlabel("Erreur (MSE)")
+plt.ylabel("Fréquence")
+plt.show()
+
+# Définir un seuil automatique pour les anomalies
+threshold = np.percentile(reconstruction_error, 95)
+print(f"Seuil d’anomalie (95e percentile) : {threshold:.5f}")
+
+# Identifier les anomalies
+anomalies = np.where(reconstruction_error > threshold)[0]
+print(f"Nombre d’anomalies détectées : {len(anomalies)}")
+
+# Visualiser anomalies vs normales
+plt.figure(figsize=(8,6))
+plt.scatter(range(len(reconstruction_error)), reconstruction_error, alpha=0.6)
+plt.axhline(threshold, color='red', linestyle='--', label='Seuil anomalie')
+plt.title("Erreurs de reconstruction et détection d’anomalies")
+plt.xlabel("Échantillons")
+plt.ylabel("Erreur (MSE)")
+plt.legend()
+plt.show()
+
+```
+<img src="Images/19.png" width="4000" style="display: block; margin: 0 auto;">
+<p style='text-align: center; font-style: italic; color: #7f8c8d;'>
+</p>
+
+
+<img src="Images/20.png" width="4000" style="display: block; margin: 0 auto;">
+<p style='text-align: center; font-style: italic; color: #7f8c8d;'>
+</p>
+
+<img src="Images/21.png" width="4000" style="display: block; margin: 0 auto;">
+<p style='text-align: center; font-style: italic; color: #7f8c8d;'>
+</p>
+
+<img src="Images/22.png" width="4000" style="display: block; margin: 0 auto;">
+<p style='text-align: center; font-style: italic; color: #7f8c8d;'>
+</p>
+
 ## Conclusion
 Ce projet démontre que l’exploitation intelligente des données médicales et socio économiques peut devenir un
 levier stratégique pour les organismes d’assurance et les acteurs du système de santé.
