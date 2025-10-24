@@ -43,3 +43,28 @@ Cette première phase d’exploration permet donc de :
 ● Détecter les problèmes de qualité des données, comme les valeurs manquantes ou les anomalies.
 Ces vérifications sont essentielles pour garantir la fiabilité des résultats et assurer la réussite des étapes suivantes d’analyse et
 de modélisation.
+
+### Analyse exploratoire des coûts médicaux
+```python
+# Visualisations simples
+# ------------------------------
+# Histogramme du coût médical annuel
+plt.figure(figsize=(8,5))
+sns.histplot(df['annual_medical_cost'], bins=50, kde=True)
+plt.title("Distribution des coûts médicaux annuels")
+plt.xlabel("Coût annuel")
+plt.ylabel("Nombre de personnes")
+plt.show()
+
+# Coût moyen par statut fumeur
+plt.figure(figsize=(6,4))
+sns.barplot(x='smoker', y='annual_medical_cost', data=df)
+plt.title("Coût moyen selon le statut de fumeur")
+plt.show()
+
+```
+
+<img src="Images/1.png" width="4000" style="display: block; margin: 0 auto;">
+<p style='text-align: center; font-style: italic; color: #7f8c8d;'>
+</p>
+
