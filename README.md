@@ -237,4 +237,44 @@ diversifiés.
 
 ● Ces corrélations confirment les résultats visuels précédents et orientent les variables à privilégier pour la modélisation
 
-### relation entre le coût médical, l’âge, le tabagisme et les catégories de BMI
+## relation entre le coût médical, l’âge, le tabagisme et les catégories de BMI
+
+Cette section vise à approfondir l’étude des dépenses médicales en intégrant un facteur essentiel de santé : l’indice de masse corporelle
+(BMI).
+L’objectif est d’observer comment le poids corporel influence la relation entre l’âge, le statut de fumeur et le coût médical annuel.
+ Interprétation des résultats:
+● Dans les catégories Overweight et Obese, les coûts médicaux augmentent nettement avec l’âge, surtout chez les fumeurs.
+
+● Les personnes obèses et fumeuses présentent les plus fortes dépenses médicales dans presque toutes les tranches d’âge.
+
+● Les individus ayant un poids normal conservent en général des coûts stables, sauf en cas de tabagisme prolongé.
+
+● Chez les personnes Underweight, la tendance est plus variable, mais les coûts restent globalement plus faibles
+
+## Évaluation et comparaison rapide des modèles de régression
+L’objectif de cette section est d’évaluer la performance de plusieurs modèles de régression pour prédire le coût médical annuel en
+fonction des caractéristiques des individus (âge, sexe, statut de fumeur, BMI, revenu, etc.).
+ Cette approche permet d’identifier le modèle le plus performant et le plus fiable pour une utilisation pratique.
+## Modélisation et évaluation des modèles de classification
+L’objectif de cette partie est de prédire si un individu présente un risque élevé de coûts médicaux (is_high_risk = 1) à partir de
+ses caractéristiques (âge, revenu, statut de fumeur, etc.).
+Cette étape permet de comparer plusieurs modèles d’apprentissage automatique et de sélectionner celui qui donne les
+meilleures performances prédictives.
+
+
+## Trois algorithmes de classification ont été choisis pour la comparaison :
+Modèle Description Avantages
+Régression Logistique Modèle linéaire simple basé
+sur la probabilité
+Interprétable, rapide à
+entraîner
+Random Forest Ensemble d’arbres de
+décision entraînés
+aléatoirement
+Robuste, capture bien les
+relations non linéaires
+XGBoost Algorithme de gradient
+boosting très performant
+Excellente précision,
+efficace sur grands volumes
+de données
